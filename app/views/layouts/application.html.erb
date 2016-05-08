@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav>
+	<ul>
+		<li>
+			<%= link_to "Home", root_path %>
+		</li>
+		<li>
+			<%= link_to "Blog", articles_path %>
+		</li>
+	</ul>
+</nav>
+
+
+<%= yield %>
+
+</body>
+</html>

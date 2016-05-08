@@ -1,0 +1,29 @@
+<div id="shake">
+<h1 class="shake-slow shake-constant">Comments by Kenaz, Chanz, and Quinn</h1>
+</div>
+<%= link_to 'Make a new post', new_article_path %>
+<br><br><br>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Comment</th>
+		<th>Created</th>
+		<th colspan = "4"></th>
+	<hr>
+	</tr>
+
+	<% @articles.each do |article| %>
+		<tr>
+			<td><%= article.title %></td>
+			<td><%= article.text %></td>
+			<td><%= distance_of_time_in_words article.created_at, Time.now %> ago</td>
+			<td><%= link_to 'Show', article_path(article) %></td>
+			<td><%= link_to 'Edit', edit_article_path(article) %></td>
+			<td><%= link_to 'Delete', article_path(article),
+							method: :delete,
+							data: {confirm: 'Are you sure?'} %></td>
+		</tr>
+	<% end %>
+
+</table>
